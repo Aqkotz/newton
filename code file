@@ -2,29 +2,26 @@
 import math
 
 Function = input("Input Function: ")
-IntvlS = int(input("Input Interval Start: "))
-IntvlE = int(input("Input Interval End: "))
 h = 0.0000001
 
-i = (float(IntvlS)-float(IntvlE))/2+float(IntvlS)
+i = 1.0
 lastx = i
 index = 0
-maxindex = 50
+maxindex = 50000
 found = False
 while found == False:
     if index <= maxindex:
-        print(i)
         x = i
         FunCat = eval(Function)
         x = i + h
         FunDog = eval(Function)
-        FunPets = FunCat-FunDog
+        FunPets = FunDog-FunCat
         FunTimes = FunPets/h
-        print(FunTimes)
-        x = i-FunDog/FunTimes
-        if (x-lastx) > 0.1 and (x-lastx) < 0.1:
+        x = i-FunCat/FunTimes
+        if (x-lastx) > -0.0000000000001 and (x-lastx) < 0.0000000000001:
             found = True
             print(x)
+        lastx = i
         i = x
     else:
         found = True
