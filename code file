@@ -1,1 +1,25 @@
 
+import math
+
+Function = input("Input Function: ")
+IntvlS = int(input("Input Interval Start: "))
+IntvlE = int(input("Input Interval End: "))
+h = 0.0000001
+
+i = (IntvlS-IntvlE)/2+IntvlS
+lastx = i
+
+found = False
+while found == False:
+    x = i
+    FunCat = eval(Function)
+    x = i + h
+    FunDog = eval(Function)
+    FunPets = FunCat-FunDog
+    FunTimes = FunPets/h
+    x = i+FunTimes*(-1*FunCat)
+    if (x-lastx) > 0.1 and (x-lastx) < 0.1:
+        found = True
+        print(x)
+    else:
+        i = x
