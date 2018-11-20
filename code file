@@ -20,7 +20,7 @@ while found == False:
         x = i-FunCat/FunTimes
         if (x-lastx) > -0.0000000000001 and (x-lastx) < 0.0000000000001:
             found = True
-            print(x)
+            print(round(x,5))
         lastx = i
         i = x
     else:
