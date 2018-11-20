@@ -6,7 +6,7 @@ IntvlS = int(input("Input Interval Start: "))
 IntvlE = int(input("Input Interval End: "))
 h = 0.0000001
 
-i = (IntvlS-IntvlE)/2+IntvlS
+i = (float(IntvlS)-float(IntvlE))/2+float(IntvlS)
 lastx = i
 index = 0
 maxindex = 50
