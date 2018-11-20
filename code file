@@ -13,18 +13,19 @@ maxindex = 50
 found = False
 while found == False:
     if index <= maxindex:
+        print(i)
         x = i
         FunCat = eval(Function)
         x = i + h
         FunDog = eval(Function)
         FunPets = FunCat-FunDog
         FunTimes = FunPets/h
-        x = i+FunTimes*(-1*FunCat)
+        print(FunTimes)
+        x = i-FunDog/FunTimes
         if (x-lastx) > 0.1 and (x-lastx) < 0.1:
             found = True
             print(x)
-        else:
-            i = x
+        i = x
     else:
         found = True
         print ("couldn't do it")
