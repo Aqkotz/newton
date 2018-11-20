@@ -8,18 +8,23 @@ h = 0.0000001
 
 i = (IntvlS-IntvlE)/2+IntvlS
 lastx = i
-
+index = 0
+maxindex = 50
 found = False
 while found == False:
-    x = i
-    FunCat = eval(Function)
-    x = i + h
-    FunDog = eval(Function)
-    FunPets = FunCat-FunDog
-    FunTimes = FunPets/h
-    x = i+FunTimes*(-1*FunCat)
-    if (x-lastx) > 0.1 and (x-lastx) < 0.1:
-        found = True
-        print(x)
+    if index >= maxindex:
+        x = i
+        FunCat = eval(Function)
+        x = i + h
+        FunDog = eval(Function)
+        FunPets = FunCat-FunDog
+        FunTimes = FunPets/h
+        x = i+FunTimes*(-1*FunCat)
+        if (x-lastx) > 0.1 and (x-lastx) < 0.1:
+            found = True
+            print(x)
+        else:
+            i = x
     else:
-        i = x
+        found = True
+        print ("couldn't do it")
